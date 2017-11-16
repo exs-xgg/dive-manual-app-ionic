@@ -3,34 +3,35 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html'
+  templateUrl: 'savedItems.html'
 })
-export class ListPage {
+export class SavedItemsPage {
   selectedItem: any;
   icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  titles: string[];
+  items: Array<{title: string, icon: string}>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
     // Let's populate this page with some filler content for funzies
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
+    this.icons = ['bookmark'];
+
+    this.titles = ['text1 saved', 'saved calculation 1', 'second saved text', 'third text', 'second calc'];
 
     this.items = [];
-    for (let i = 1; i < 11; i++) {
+    for (let i = 0; i < this.titles.length; i++) {
       this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+        title: this.titles[i],
+        icon: this.icons[0]
       });
     }
   }
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
+    this.navCtrl.push(SavedItemsPage, {
       item: item
     });
   }

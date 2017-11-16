@@ -4,7 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { SavedItemsPage } from '../pages/savedItems/savedItems';
+import { PdfPage } from '../pages/pdf/pdf';
+import { CalculatorPage } from '../pages/calculator/calculator';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,13 +18,21 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
+  showSubmenu: boolean = false;
+
+  menuItemHandler(): void {
+    this.showSubmenu = !this.showSubmenu;
+  }
+
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Manual', component: PdfPage },
+      { title: 'Saved Items', component: SavedItemsPage },
+      { title: 'Calculator', component: CalculatorPage },
+      { title: 'Return to Home', component: HomePage }
     ];
 
   }
@@ -41,4 +51,9 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+  openChapter(chapter) {
+    alert("Expected to Go to: "+chapter);
+  }
+
 }
