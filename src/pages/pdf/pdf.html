@@ -1,18 +1,30 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar primary>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Manual</ion-title>
+    
+    <ion-title class="new-background">Manual</ion-title>
+
+    <ion-buttons end="" class="bar-buttons bar-buttons-ios">
+      <button (click)="saveData()" color="secondary" icon-end="" ion-button="" solid="" class="disable-hover bar-button bar-button-ios bar-button-solid bar-button-solid-ios bar-button-solid-ios-secondary"><span class="button-inner">
+        Save
+      </span><div class="button-effect"></div></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="manual-content"  overflow-scroll="true">
-  <h3>NAPOLEON'S TOMB</h3>
-  <ion-fab right menuToggle>
-   <button ion-fab>Menu</button>
-  </ion-fab>
-  <p>
+<ion-content padding class="manual-content" overflow-scroll="true">
+  <h3>NAPOLEON'S TOMB - Sample manual-content</h3>
+  <!-- <ion-fab right class="bar-buttons bar-buttons-md saveText">
+    <button ion-fabn class="fab fab-md" (click)="saveData()">Save</button>
+   </ion-fab> -->
+   <div ng-app="myApp" ng-controller="myCtrl">
+      
+          <p ng-bind-html="myText"></p>
+      
+      </div>
+  <p class="pfdContent">
     A little while ago I stood by the grave of Napoleon, a magnificient tomb of gilt and gold, fit almost for a dead deity, and gazed upon the sarcophagus of black Egyptian marble where rests at last the ashes of the restless man. I leaned over the balustrade and thought about the career of the greatest soldier of the modern world.
 
 I saw him walking upon the banks of the Seine contemplating suicide; I saw him at Toulon; I saw him putting down the mob in the streets of Paris; I saw him at the head of the army of Italy; I saw him crossing the bridge at Lodi with the tricolor in his hand; I saw him in Egypt in the shadows of the pyramids; I saw him conquer the Alps and mingle the eagle of France with the eagles of the crags. I saw him at Marengo, at Ulm and Austerlitz. I saw him in Russia, where the infantry of the snow and the cavalry of the wild blast scattered his legions like winter's withered leaves. I saw him at Leipsic in defeat and disaster, driven by a million bayonets back upon Paris, clutched like a wild beast, banished to Elba. I saw him escape and retake an Empire by the force of his genius. I saw him upon the frightful field of Waterloo, when chance and fate combined to wreck the fortunes of their former king. And I saw him at St. Helena, with his hands crossed behind him, gazing out upon the sad and solemn sea.
@@ -22,9 +34,8 @@ I thought of the orphans and widows he had made; of the tears that had been shed
 And I said I would rather have been a French peasant and worn wooden shoes. I would rather have lived in a hut with a vine growing over the door and the grapes growing purple in the kisses of the autumn sun. I would rather have been that poor peasant with my loving wife by my side, knitting as the day died out of the sky, with my children upon my knee and their arms about me. I would rather have been that man and gone down to the tongueless silence of the dreamless dust than to have been that imperial impersonation of force and murder known as Napoleon the Great.
   </p>
 
-  <p>
-
-    majorityrights.comDonate9
+  <p class="pfdContent" id = "chapter1">
+    <strong>Chapter 1 starts here</strong><br>
      Home/Central News & Views MR RadioForum Videos Search Archives About Contact
 
     A Farewell To History (PF’s Longest Essay)
@@ -91,18 +102,58 @@ And I said I would rather have been a French peasant and worn wooden shoes. I wo
 
     ___ ____
 
+</p> 
+<p class="pfdContent" id = "chapter2">
+    <strong>Chapter 2 starts here</strong><br>
     I had long wanted to post an introduction to and synopsis of Friedrich Nietzsche’s On The Use And Abuse of History For Everyday Life, which is my favorite work of his.
+    
+        In it he delineates three kinds of history: Monumental History, Antiquarian History, and Critical History.
+    
+        Monumental history is history fueled by a positive valuation. Critical history is history fueled by a negative valuation. Antiquarian history is objective history fueled by no evaluation, the simple act of collecting facts.
+    
+        Monumental history exists to give children a positive image of their ancestors and inspire men to historic action: it is demonstrable that many of histories greatest actors really were fixated on achieving a high place in history: Nelson, Hitler, Caesar. The particular psychological striving that animated these men is a result of Monumental History. I recommend that Monumental history be promulgated amongst young people to inculcate ambition, pride and self-sacrifice.
+    
+        Antiquarian history is good history: really, it is real history: a sober reporting of facts. Value-judgments are abstained from as far as is possible.
+    
+        Critical history is negative history, which calls into question the worth attributed to any specific period. We know it primarily as the demolition of our own Monumental History through the emphasis on the fact that the benefit’s of our history were once not shared with foreigners: The British Empire is a Bad Thing. This is why our history is “bad”: because we weren’t working in the interests of foreign peoples (yet). Children who grow up indoctrinated in this way are perhaps strangely poisoned: they don’t believe in the worth of the community that spawned them, it seems their path out of nihilism will be a particularly difficult one.
+    
+        But critical history is particularly useful to those who have ingested too much Monumental History: and you can ingest too much of it! Believing too firmly in heroes and grand acts, a grand gesture as justification of one’s worth, and the need to give one’s all in an enormous struggle– that is a way of thinking I invite everyone to try out for themselves with all the seriousness they can muster. It does not lead to stability and self-acceptance. Take it too seriously, and the pantheon of representative symbols on which it is based, and you will suffer as a result. Critical history frees one from this burden by promoting a neutral or even negative evaluation.
+    
+</p>
 
-    In it he delineates three kinds of history: Monumental History, Antiquarian History, and Critical History.
+<p class="pfdContent" id = "chapter3">
+    <strong>Chapter 3 starts here</strong><br>
+    I had long wanted to post an introduction to and synopsis of Friedrich Nietzsche’s On The Use And Abuse of History For Everyday Life, which is my favorite work of his.
+    
+        In it he delineates three kinds of history: Monumental History, Antiquarian History, and Critical History.
+    
+        Monumental history is history fueled by a positive valuation. Critical history is history fueled by a negative valuation. Antiquarian history is objective history fueled by no evaluation, the simple act of collecting facts.
+    
+        Monumental history exists to give children a positive image of their ancestors and inspire men to historic action: it is demonstrable that many of histories greatest actors really were fixated on achieving a high place in history: Nelson, Hitler, Caesar. The particular psychological striving that animated these men is a result of Monumental History. I recommend that Monumental history be promulgated amongst young people to inculcate ambition, pride and self-sacrifice.
+    
+        Antiquarian history is good history: really, it is real history: a sober reporting of facts. Value-judgments are abstained from as far as is possible.
+    
+        Critical history is negative history, which calls into question the worth attributed to any specific period. We know it primarily as the demolition of our own Monumental History through the emphasis on the fact that the benefit’s of our history were once not shared with foreigners: The British Empire is a Bad Thing. This is why our history is “bad”: because we weren’t working in the interests of foreign peoples (yet). Children who grow up indoctrinated in this way are perhaps strangely poisoned: they don’t believe in the worth of the community that spawned them, it seems their path out of nihilism will be a particularly difficult one.
+    
+        But critical history is particularly useful to those who have ingested too much Monumental History: and you can ingest too much of it! Believing too firmly in heroes and grand acts, a grand gesture as justification of one’s worth, and the need to give one’s all in an enormous struggle– that is a way of thinking I invite everyone to try out for themselves with all the seriousness they can muster. It does not lead to stability and self-acceptance. Take it too seriously, and the pantheon of representative symbols on which it is based, and you will suffer as a result. Critical history frees one from this burden by promoting a neutral or even negative evaluation.
+    
+</p>
 
-    Monumental history is history fueled by a positive valuation. Critical history is history fueled by a negative valuation. Antiquarian history is objective history fueled by no evaluation, the simple act of collecting facts.
-
-    Monumental history exists to give children a positive image of their ancestors and inspire men to historic action: it is demonstrable that many of histories greatest actors really were fixated on achieving a high place in history: Nelson, Hitler, Caesar. The particular psychological striving that animated these men is a result of Monumental History. I recommend that Monumental history be promulgated amongst young people to inculcate ambition, pride and self-sacrifice.
-
-    Antiquarian history is good history: really, it is real history: a sober reporting of facts. Value-judgments are abstained from as far as is possible.
-
-    Critical history is negative history, which calls into question the worth attributed to any specific period. We know it primarily as the demolition of our own Monumental History through the emphasis on the fact that the benefit’s of our history were once not shared with foreigners: The British Empire is a Bad Thing. This is why our history is “bad”: because we weren’t working in the interests of foreign peoples (yet). Children who grow up indoctrinated in this way are perhaps strangely poisoned: they don’t believe in the worth of the community that spawned them, it seems their path out of nihilism will be a particularly difficult one.
-
-    But critical history is particularly useful to those who have ingested too much Monumental History: and you can ingest too much of it! Believing too firmly in heroes and grand acts, a grand gesture as justification of one’s worth, and the need to give one’s all in an enormous struggle– that is a way of thinking I invite everyone to try out for themselves with all the seriousness they can muster. It does not lead to stability and self-acceptance. Take it too seriously, and the pantheon of representative symbols on which it is based, and you will suffer as a result. Critical history frees one from this burden by promoting a neutral or even negative evaluation.
-</p> Why i cant copy text
+<p class="pfdContent" id = "lastPage">
+    <strong>Last page here</strong><br>
+    I had long wanted to post an introduction to and synopsis of Friedrich Nietzsche’s On The Use And Abuse of History For Everyday Life, which is my favorite work of his.
+    
+        In it he delineates three kinds of history: Monumental History, Antiquarian History, and Critical History.
+    
+        Monumental history is history fueled by a positive valuation. Critical history is history fueled by a negative valuation. Antiquarian history is objective history fueled by no evaluation, the simple act of collecting facts.
+    
+        Monumental history exists to give children a positive image of their ancestors and inspire men to historic action: it is demonstrable that many of histories greatest actors really were fixated on achieving a high place in history: Nelson, Hitler, Caesar. The particular psychological striving that animated these men is a result of Monumental History. I recommend that Monumental history be promulgated amongst young people to inculcate ambition, pride and self-sacrifice.
+    
+        Antiquarian history is good history: really, it is real history: a sober reporting of facts. Value-judgments are abstained from as far as is possible.
+    
+        Critical history is negative history, which calls into question the worth attributed to any specific period. We know it primarily as the demolition of our own Monumental History through the emphasis on the fact that the benefit’s of our history were once not shared with foreigners: The British Empire is a Bad Thing. This is why our history is “bad”: because we weren’t working in the interests of foreign peoples (yet). Children who grow up indoctrinated in this way are perhaps strangely poisoned: they don’t believe in the worth of the community that spawned them, it seems their path out of nihilism will be a particularly difficult one.
+    
+        But critical history is particularly useful to those who have ingested too much Monumental History: and you can ingest too much of it! Believing too firmly in heroes and grand acts, a grand gesture as justification of one’s worth, and the need to give one’s all in an enormous struggle– that is a way of thinking I invite everyone to try out for themselves with all the seriousness they can muster. It does not lead to stability and self-acceptance. Take it too seriously, and the pantheon of representative symbols on which it is based, and you will suffer as a result. Critical history frees one from this burden by promoting a neutral or even negative evaluation.
+    
+</p>
 </ion-content>

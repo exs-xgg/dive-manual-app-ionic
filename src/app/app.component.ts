@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { SavedItemsPage } from '../pages/savedItems/savedItems';
 import { PdfPage } from '../pages/pdf/pdf';
 import { CalculatorPage } from '../pages/calculator/calculator';
+import { SavedCalculationsPage } from '../pages/savedCalculations/savedCalculations';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,10 +30,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Manual', component: PdfPage },
-      { title: 'Saved Items', component: SavedItemsPage },
-      { title: 'Calculator', component: CalculatorPage },
-      { title: 'Return to Home', component: HomePage }
+      { title: 'Calculator', component: CalculatorPage,},
+      { title: 'Saved Items', component: SavedItemsPage},
+      { title: 'Saved Calculations', component: SavedCalculationsPage}
     ];
 
   }
@@ -53,7 +53,11 @@ export class MyApp {
   }
 
   openChapter(chapter) {
-    alert("Expected to Go to: "+chapter);
+    
+    this.nav.push(PdfPage, {
+      chapterParam: chapter
+    });
+    
   }
 
 }

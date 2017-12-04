@@ -7,15 +7,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here : <b>{{selectedItem.title}}</b>
-  </div>
-</ion-content>
+<ion-content padding>
+    <h2>Saved Items</h2>
+    <ion-list>
+      <ion-item-sliding *ngFor="let savedText of savedTexts; let i=index">
+        <ion-item nopadding>
+          <p (click)="goToManual(savedText.description)">
+            <span><strong>{{savedText.description}}</strong></span><br>
+            {{savedText.date}}
+          </p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deleteData(savedText.rowid)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>

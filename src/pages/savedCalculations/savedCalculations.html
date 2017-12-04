@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Saved Calculations</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>Saved Calculations</h2>
+    <ion-list>
+      <ion-item-sliding *ngFor="let savedCalculation of savedCalculations; let i=index">
+        <ion-item nopadding>
+          <p (click)="goToCalculator(savedCalculation.fo2, savedCalculation.ppo2)">
+            <span><strong>FO<sub>2</sub>: {{savedCalculation.fo2}} - PPO<sub>2</sub>: {{savedCalculation.ppo2}}</strong></span><br>
+            {{savedCalculation.date}}
+          </p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deleteData(savedCalculation.rowid)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>

@@ -1,3 +1,4 @@
+ 
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -8,5 +9,54 @@
 </ion-header>
 
 <ion-content padding class="home-content">
+  <h3 class="home-title">Navy Dive Manual</h3>
+</ion-content>
+
+<!--
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addData()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home-content">
   <h3 class="home-title">US Marine Divers' Manual</h3>
 </ion-content>
+
+
+  <ion-content padding>
+  <h2>Expense List</h2>
+  <ion-list>
+    <ion-item-sliding *ngFor="let expense of expenses; let i=index">
+      <ion-item nopadding>
+        <p>
+          <span>{{expense.date}}</span><br>
+          Type: {{expense.type}}<br>
+          {{expense.description}}
+        </p>
+        <h3 item-end>
+          Amount: ${{expense.amount}}
+        </h3>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="editData(expense.rowid)">
+          <ion-icon name="paper"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteData(expense.rowid)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+-->

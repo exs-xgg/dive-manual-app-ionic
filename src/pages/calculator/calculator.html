@@ -8,6 +8,24 @@
 </ion-header>
 
 <ion-content padding class="manual-content"  overflow-scroll="true">
-  <h3>You are now on Calculator</h3>
-  <p>all the calculations will on this page</p>
+  <h3>Compute for Maximum Operating Depth (MOD)</h3>
+  <ion-item>
+      <ion-label color="primary" stacked>Fraction of Oxygen</ion-label>
+    <ion-input type="text" [(ngModel)]="fo2" (ionChange)='changefo2()' placeholder="Fraction of Oxygen (FO2)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Partial Pressure Oxygen</ion-label>
+    <ion-input type="text" [(ngModel)]="ppo2" (ionChange)='changeppo2()' placeholder="Partial Pressure Oxygen (ppO2)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="add-pre">If your FO<sub>2</sub> is <span id="fo2-value" class="fo2-value">0</span>% and 
+              your ppO<sub>2</sub> is <span id="ppo2-value" class="ppo2-value">0</span> bar then your 
+              <strong>Maximum Operating Depth is <span id="result-meter">0</span> metres</strong> (or <span id="result-feet">0</span> feet)
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  </ion-item>
 </ion-content>
