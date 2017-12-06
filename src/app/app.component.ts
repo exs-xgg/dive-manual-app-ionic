@@ -6,8 +6,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { SavedItemsPage } from '../pages/savedItems/savedItems';
 import { PdfPage } from '../pages/pdf/pdf';
-import { CalculatorPage } from '../pages/calculator/calculator';
 import { SavedCalculationsPage } from '../pages/savedCalculations/savedCalculations';
+import { LibraryPage } from '../pages/library/library';
+import { FormulaListPage } from '../pages/formulaList/formulaList';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -30,10 +32,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Calculator', component: CalculatorPage,},
+      { title: 'Library', component: LibraryPage,},
+      { title: 'Calculator', component: FormulaListPage,},
       { title: 'Saved Items', component: SavedItemsPage},
       { title: 'Saved Calculations', component: SavedCalculationsPage}
-    ];
+    ];    
 
   }
 
@@ -59,5 +62,7 @@ export class MyApp {
     });
     
   }
+
+  
 
 }

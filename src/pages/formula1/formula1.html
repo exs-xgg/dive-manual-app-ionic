@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Calculator</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="manual-content"  overflow-scroll="true">
+  <h3>Duration of SCUBA Air Supply</h3>
+  <p>
+      There are three steps in calculating how long a diver’s air supply will last: 
+  </p>
+  <ul class="my-nav">
+    <li>Calculate the diver’s consumption rate</li>
+    <li>Calculate the available air capacity provided by the cylinders</li>
+    <li>Calculate the duration of the available capacity (in minutes)</li>
+  </ul>
+
+  <div class = "pad-top-20 pad-bottom-10"><u>For diver's consumption rate:</u></div>
+  <ion-item>
+      <ion-label color="primary" stacked>Depth</ion-label>
+    <ion-input type="text" [(ngModel)]="depth" (ionChange)='computeConsumptionRate()' placeholder="Depth, fsw"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Respiratory Minute Volume</ion-label>
+    <ion-input type="text" [(ngModel)]="rmv" (ionChange)='computeConsumptionRate()' placeholder="RMV, actual cubic feet per minute (acfm)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="add-pre">
+        Diver's consumption rate : <u><span id="result-cubic">0</span></u> standard cubic feet per minute (scfpm).
+    </ion-label>
+  </ion-item>
+  
+  <div class = "pad-top-20 pad-bottom-10"><u>For available air capacity provided by the cylinders:</u></div>
+
+  <ion-item>
+      <ion-label color="primary" stacked>Measured cylinder pressure, psig</ion-label>
+    <ion-input type="text" [(ngModel)]="pc" (ionChange)='computeCapacityAvailable()' placeholder="Measured cylinder pressure, psig"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Minimum pressure of cylinder, psig</ion-label>
+    <ion-input type="text" [(ngModel)]="pm" (ionChange)='computeCapacityAvailable()' placeholder="Minimum pressure of cylinder, psig"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label color="primary" stacked>Floodable Volume (scf)</ion-label>
+    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeCapacityAvailable()' placeholder="Floodable Volume (scf)"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Number of cylinders</ion-label>
+    <ion-input type="text" [(ngModel)]="noc" (ionChange)='computeCapacityAvailable()' placeholder="Number of cylinders"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="add-pre">
+      Capacity Available : <u><span id="result-capacity-available">0</span></u>
+    </ion-label>
+  </ion-item>
+
+
+  <div class = "pad-top-20 pad-bottom-10"><u>For the duration of the available capacity (in minutes):</u></div>
+  
+    <ion-item>
+        <ion-label color="primary" stacked>Capacity available, scf</ion-label>
+        <ion-label id = "capacity-available"></ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label color="primary" stacked>Consumption rate, scfm</ion-label>
+      <ion-label id = "consumption-rate"></ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label class="add-pre">
+        <strong>Duration : <u><span id="result-duration">0</span></u> minutes</strong>
+      </ion-label>
+    </ion-item>
+
+  <ion-item hidden>
+    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  </ion-item>
+</ion-content>

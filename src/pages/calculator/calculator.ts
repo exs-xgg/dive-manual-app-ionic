@@ -22,16 +22,16 @@ export class CalculatorPage {
   }
 
   ionViewDidEnter() {
-    this.changefo2();
-    this.changeppo2();
+    this.changeDepth();
+    this.changeRmv();
   }
 
-  changefo2(){
+  changeDepth(){
     document.getElementById("fo2-value").innerHTML = (this.fo2*100).toFixed(0).toString();
     this.computeForFeet();
   }
 
-  changeppo2(){
+  changeRmv(){
     document.getElementById("ppo2-value").innerHTML = this.ppo2;
     this.computeForFeet();
   }

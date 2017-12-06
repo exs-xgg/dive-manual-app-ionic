@@ -1,16 +1,29 @@
 page-home {
 
+  $SIDEMENU_TOP: rgb(7, 42, 148);
+  $SIDEMENU_BOTTOM: #41a6c5;
+  $SIDEMENU_TRANSPARENCY: rgba(233, 212, 212, 0.4);
+  
+  
   .home-content{
-    background-image: url("../assets/imgs/homepage-img.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+      background: -webkit-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+      background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
   }
 
   .home-title {
-      color: white;
-      font-size: 45px;
+      color: rgb(202, 211, 72);
+      font-size: 30px;
       text-align: center;
-      margin-top: 200px !important;
+      margin-top: 10px !important;
+      text-shadow: 0px 1px 5px #d2bdbd;
+  }
+
+  .homepage-logo{
+    max-width : 50%;
+    margin-left : 25%;
+    margin-top: 25%;
   }
 
   ion-content{

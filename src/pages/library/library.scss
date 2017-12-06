@@ -1,0 +1,15 @@
+page-library {
+
+  .manual-content{
+    -webkit-user-select: text;
+  }
+
+  .add-pre{
+    white-space: inherit;
+  }
+
+  .save-computation{
+    height: 40px !important;
+    font-size: 1.5rem !important;
+  }
+}

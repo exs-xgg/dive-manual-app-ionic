@@ -14,6 +14,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { SQLite } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
+import { LibraryPage } from '../pages/library/library';
+import { FormulaListPage } from '../pages/formulaList/formulaList';
+import { Formula1Page } from '../pages/formula1/formula1';
+import { Formula2Page } from '../pages/formula2/formula2';
+//import { Formula3Page } from '../pages/formula3/formula3';
+//import { Formula4Page } from '../pages/formula4/formula4';
+//import { Formula5Page } from '../pages/formula5/formula5';
+//import { Formula6Page } from '../pages/formula6/formula6';
+//import { Formula7Page } from '../pages/formula7/formula7';
+//import { Formula8Page } from '../pages/formula8/formula8';
+//import { Formula9Page } from '../pages/formula9/formula9';
 
 @NgModule({
   declarations: [
@@ -22,7 +33,18 @@ import { Toast } from '@ionic-native/toast';
     PdfPage,
     SavedItemsPage,
     CalculatorPage,
-    SavedCalculationsPage
+    SavedCalculationsPage,
+    LibraryPage,
+    FormulaListPage,
+    Formula1Page,
+    Formula2Page,
+    // Formula3Page,
+    // Formula4Page,
+    // Formula5Page,
+    // Formula6Page,
+    // Formula7Page,
+    // Formula8Page,
+    // Formula9Page
   ],
   imports: [
     BrowserModule,
@@ -36,7 +58,19 @@ import { Toast } from '@ionic-native/toast';
     PdfPage,
     SavedItemsPage,
     CalculatorPage,
-    SavedCalculationsPage
+    SavedCalculationsPage,
+    LibraryPage,
+    FormulaListPage,
+    Formula1Page,
+    Formula2Page,
+    Formula2Page,
+    // Formula3Page,
+    // Formula4Page,
+    // Formula5Page,
+    // Formula6Page,
+    // Formula7Page,
+    // Formula8Page,
+    // Formula9Page
   ],
   providers: [
     StatusBar,

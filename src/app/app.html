@@ -12,29 +12,15 @@
   </ion-nav-bar> -->
 
   <ion-content>
-    <!-- <ion-list id="sidenav">
-      <ion-item (click)="menuItemHandler()">Library</ion-item>
-      <ion-item-group submenu [class.visible]="showSubmenu" [class.hide]="!showSubmenu" >
-        <ion-item menuClose submenu-item (click)="openChapter('chapter1')">Chapter 1</ion-item>
-        <ion-item menuClose submenu-item (click)="openChapter('chapter2')">Chapter 2</ion-item>
-        <ion-item menuClose submenu-item (click)="openChapter('chapter3')">Chapter 3</ion-item>
-      </ion-item-group>
-    </ion-list> -->
     <ion-list>
-      <ion-item (click)="menuItemHandler()">Library</ion-item>
-      <ion-item-group submenu [class.visible]="showSubmenu" [class.hide]="!showSubmenu" >
-        <ion-item menuClose submenu-item (click)="openChapter('chapter1')">Chapter 1</ion-item>
-        <ion-item menuClose submenu-item (click)="openChapter('chapter2')">Chapter 2</ion-item>
-        <ion-item menuClose submenu-item (click)="openChapter('chapter3')">Chapter 3</ion-item>
-      </ion-item-group>
-
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
   </ion-content>
-
 </ion-menu>
+
+
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
