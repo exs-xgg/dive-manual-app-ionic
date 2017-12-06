@@ -4,10 +4,10 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 
 @Component({
-  selector: 'page-formula4',
-  templateUrl: 'formula4.html'
+  selector: 'page-formula10',
+  templateUrl: 'formula10.html'
 })
-export class Formula4Page {
+export class Formula10Page {
 
   ata: any;
   fv: any;

@@ -7,7 +7,7 @@ import { Toast } from '@ionic-native/toast';
   selector: 'page-formula3',
   templateUrl: 'formula3.html'
 })
-export class Formula2Page {
+export class Formula3Page {
 
   ata: any;
   fv: any;

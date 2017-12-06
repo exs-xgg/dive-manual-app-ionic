@@ -31,8 +31,8 @@ export class Formula2Page {
 
   computeSfc(){
 
-    let a = Number(this.ata) * Number(this.fv) * Number(this.n);
-    document.getElementById("result-sfc").innerHTML = a.toFixed(2).toString();
+    let a = (Number(this.ata) * Number(this.fv) * Number(this.n)) + 0.5;
+    document.getElementById("result-sfc").innerHTML = Math.round(a).toFixed(2).toString();
 
   }
 
