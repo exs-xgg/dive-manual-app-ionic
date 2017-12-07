@@ -9,9 +9,10 @@ import { Toast } from '@ionic-native/toast';
 })
 export class Formula9Page {
 
-  ata: any;
-  fv: any;
-  n: any;
+  fv1: any;
+  fv2: any;
+  pressure1: any;
+  pressure2: any;
 
 
   @ViewChild(Content) content: Content;
@@ -19,9 +20,10 @@ export class Formula9Page {
       private toast: Toast,
       public navParams: NavParams) {
 
-    this.ata = navParams.get("ata");
-    this.fv = navParams.get("fv");
-    this.n = navParams.get("n");
+    this.fv1 = navParams.get("fv1");
+    this.fv2 = navParams.get("fv2");
+    this.pressure1 = navParams.get("pressure1");
+    this.pressure2 = navParams.get("pressure2");
 
   }
 
@@ -31,8 +33,18 @@ export class Formula9Page {
 
   computeSfc(){
 
-    let a = Number(this.ata) * Number(this.fv) * Number(this.n);
-    document.getElementById("result-sfc").innerHTML = a.toFixed(2).toString();
+    let ata1 = ( Number(this.fv1) + 14.7 ) / 14.7;
+    let ata2 = ( Number(this.fv2) + 14.7 ) / 14.7;
+
+    let scf1 = ata1 * this.pressure1;
+    let scf2 = ata2 * this.pressure2;
+
+    let scf3 = Number(scf1) + Number(scf2);
+    let pressure3 = Number(this.pressure1) + Number(this.pressure2);
+
+    let ata3 = ( (scf3 / pressure3) - 1 ) * 14.7;
+
+    document.getElementById("result-sfc").innerHTML = ata3.toFixed(2).toString();
 
   }
 

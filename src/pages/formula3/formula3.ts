@@ -9,7 +9,9 @@ import { Toast } from '@ionic-native/toast';
 })
 export class Formula3Page {
 
-  ata: any;
+  pf: any;
+  mf: any;
+  mmp: any;
   fv: any;
   n: any;
 
@@ -19,7 +21,9 @@ export class Formula3Page {
       private toast: Toast,
       public navParams: NavParams) {
 
-    this.ata = navParams.get("ata");
+    this.pf = navParams.get("pf");
+    this.mf = navParams.get("mf");
+    this.mmp = navParams.get("mmp");
     this.fv = navParams.get("fv");
     this.n = navParams.get("n");
 
@@ -31,7 +35,12 @@ export class Formula3Page {
 
   computeSfc(){
 
-    let a = Number(this.ata) * Number(this.fv) * Number(this.n);
+    if ( this.mmp == undefined ) {
+      this.mmp = 0;
+    }
+    
+    let a = ((Number(this.pf) - (Number(this.mf) + Number(this.mmp))) / 14.7) * this.fv * this.n;
+    a = Math.round(Number(a)+0.5);
     document.getElementById("result-sfc").innerHTML = a.toFixed(2).toString();
 
   }
@@ -41,7 +50,7 @@ export class Formula3Page {
       name: 'ionicdb.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql("INSERT INTO saved_mod VALUES(NULL,strftime('%Y-%m-%d %H-%M-%S','now'),?, ?)",[this.ata, this.fv])
+      db.executeSql("INSERT INTO saved_mod VALUES(NULL,strftime('%Y-%m-%d %H-%M-%S','now'),?, ?)",[this.pf, this.fv])
         .then(res => {
           console.log(res);
           this.toast.show('Data saved', '1000', 'center').subscribe(

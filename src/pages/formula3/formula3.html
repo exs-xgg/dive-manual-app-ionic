@@ -19,19 +19,29 @@
   </ul>
 
   <ion-item>
-      <ion-label color="primary" stacked>ATA</ion-label>
-    <ion-input type="text" [(ngModel)]="ata" (ionChange)='computeSfc()' placeholder="PSIG in flasks"></ion-input>
+      <ion-label color="primary" stacked>P<sub>f</sub></ion-label>
+    <ion-input type="text" [(ngModel)]="pf" (ionChange)='computeSfc()' placeholder="Flask pressure"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label color="primary" stacked>FV</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
+    <ion-label color="primary" stacked>P<sub>mf</sub></ion-label>
+    <ion-input type="text" [(ngModel)]="mf" (ionChange)='computeSfc()' placeholder="Minimum flask pressure"></ion-input>
   </ion-item>
 
+  <ion-item>
+    <ion-label color="primary" stacked>MMP</ion-label>
+    <ion-input type="text" [(ngModel)]="mmp" (ionChange)='computeSfc()' placeholder="MMP"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label color="primary" stacked>FV</ion-label>
+    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks"></ion-input>
+  </ion-item>
+  
   <ion-item>
       <ion-label color="primary" stacked>N</ion-label>
-      <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
-    </ion-item>
+    <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
+  </ion-item>
 
   <ion-item>
     <ion-label class="add-pre">
@@ -39,6 +49,15 @@
     </ion-label>
   </ion-item>
 
+  <p>
+      <strong>Note:</strong> If calculating air available for use for chamber operations where NO surface supplied
+      diving is involved, DO NOT USE MMP. Use Pmf or regulator setting, whichever is higher.
+  </p>
+
+  <p>
+      <strong>Note:</strong> If calculating O2 available for use for chamber operations, DO NOT USE MMP. Use Pmf
+      + O2 regulator setting.
+  </p>
   <ion-item hidden>
     <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
   </ion-item>

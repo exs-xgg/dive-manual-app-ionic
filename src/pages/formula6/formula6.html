@@ -10,26 +10,28 @@
 <ion-content padding class="manual-content"  overflow-scroll="true">
   <h3>Surfaced Supplied Air / Mixed Gas Requirements</h3>
 
+<label><u>A) Descent and Bottom phase:</u></label>
+
   Legend:
   <ul class="my-nav">
-    <li>ATA - PSIG in flasks</li>
-    <li>FV - Floodable volume in flasks in cu ft</li>
-    <li>N - Number of flasks</li>
+    <li>ACFM - Average consumption rate</li>
+    <li>N - Number of divers including standby</li>
+    <li>T - Time in minutes</li>
   </ul>
 
   <ion-item>
-      <ion-label color="primary" stacked>ATA</ion-label>
-    <ion-input type="text" [(ngModel)]="ata" (ionChange)='computeSfc()' placeholder="PSIG in flasks"></ion-input>
+      <ion-label color="primary" stacked>ACFM</ion-label>
+    <ion-input type="text" [(ngModel)]="aata" (ionChange)='computeSfc()' placeholder="Average consumption rate"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label color="primary" stacked>FV</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
+    <ion-label color="primary" stacked>No. of divers</ion-label>
+    <ion-input type="text" [(ngModel)]="an" (ionChange)='computeSfc()' placeholder="No. of divers"></ion-input>
   </ion-item>
 
   <ion-item>
-      <ion-label color="primary" stacked>N</ion-label>
-      <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
+      <ion-label color="primary" stacked>Time in Minutes</ion-label>
+      <ion-input type="text" [(ngModel)]="at" (ionChange)='computeSfc()' placeholder="Time in Minutes"></ion-input>
     </ion-item>
 
   <ion-item>

@@ -9,9 +9,9 @@ import { Toast } from '@ionic-native/toast';
 })
 export class Formula6Page {
 
-  ata: any;
-  fv: any;
-  n: any;
+  aata: any;
+  an: any;
+  at: any;
 
 
   @ViewChild(Content) content: Content;
@@ -19,9 +19,9 @@ export class Formula6Page {
       private toast: Toast,
       public navParams: NavParams) {
 
-    this.ata = navParams.get("ata");
-    this.fv = navParams.get("fv");
-    this.n = navParams.get("n");
+    this.aata = navParams.get("aata");
+    this.an = navParams.get("an");
+    this.at = navParams.get("at");
 
   }
 
@@ -31,7 +31,7 @@ export class Formula6Page {
 
   computeSfc(){
 
-    let a = Number(this.ata) * Number(this.fv) * Number(this.n);
+    let a = Number(this.aata) * Number(this.an) * Number(this.at);
     document.getElementById("result-sfc").innerHTML = a.toFixed(2).toString();
 
   }
@@ -41,7 +41,7 @@ export class Formula6Page {
       name: 'ionicdb.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql("INSERT INTO saved_mod VALUES(NULL,strftime('%Y-%m-%d %H-%M-%S','now'),?, ?)",[this.ata, this.fv])
+      db.executeSql("INSERT INTO saved_mod VALUES(NULL,strftime('%Y-%m-%d %H-%M-%S','now'),?, ?)",[this.aata, this.an])
         .then(res => {
           console.log(res);
           this.toast.show('Data saved', '1000', 'center').subscribe(

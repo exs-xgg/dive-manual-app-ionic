@@ -9,19 +9,20 @@ import { Toast } from '@ionic-native/toast';
 })
 export class Formula8Page {
 
-  ata: any;
+  scf: any;
+  pressure: any;
   fv: any;
-  n: any;
 
+  ata: any;
 
   @ViewChild(Content) content: Content;
   constructor(public navCtrl: NavController, private sqlite: SQLite, 
       private toast: Toast,
       public navParams: NavParams) {
 
-    this.ata = navParams.get("ata");
+    this.scf = navParams.get("scf");
+    this.pressure = navParams.get("pressure");
     this.fv = navParams.get("fv");
-    this.n = navParams.get("n");
 
   }
 
@@ -29,12 +30,40 @@ export class Formula8Page {
   }
 
 
-  computeSfc(){
+  computeT(){
 
-    let a = Number(this.ata) * Number(this.fv) * Number(this.n);
-    document.getElementById("result-sfc").innerHTML = a.toFixed(2).toString();
+    if(this.scf != undefined && this.fv != undefined ){
+        let b = (Number(this.scf) / Number(this.fv)).toFixed(5);
+        b = ((Number(b) - 1) * 14.7).toFixed(2).toString();
+        //document.getElementById("pressure").innerHTML = b;
+        this.pressure = b;
+
+        let a = ( Number(b) + 14.7 ) / 14.7;
+        document.getElementById("ata-value").innerHTML = "ATA: "+a.toFixed(6).toString();
+    }
 
   }
+
+  computeP(){
+
+    if ( this.pressure != undefined && this.fv != undefined ){
+      let a = Number(this.fv) * Number(this.ata);
+      this.scf = a.toFixed(2).toString();
+    }
+    
+  }
+
+
+  computeAta(callComputeT){
+    
+      let a = ( Number(this.pressure) + 14.7 ) / 14.7;
+      this.ata = a.toFixed(6);
+      document.getElementById("ata-value").innerHTML = "ATA: "+this.ata.toString();
+      if(callComputeT){
+        this.computeP();
+      }
+  
+    }
 
   saveCalculation() {
     this.sqlite.create({

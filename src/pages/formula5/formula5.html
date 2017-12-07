@@ -12,9 +12,9 @@
 
   Legend:
   <ul class="my-nav">
-    <li>ATA - PSIG in flasks</li>
-    <li>FV - Floodable volume in flasks in cu ft</li>
-    <li>N - Number of flasks</li>
+    <li>EAD - equivalent depth on air (fsw)</li>
+    <li>D - diving depth mixture (fsw)</li>
+    <li>O2 % - oxygen concentration in breathing medium (percentage decimal)</li>
   </ul>
 
   <ion-item>
@@ -26,11 +26,6 @@
     <ion-label color="primary" stacked>FV</ion-label>
     <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
   </ion-item>
-
-  <ion-item>
-      <ion-label color="primary" stacked>N</ion-label>
-      <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
-    </ion-item>
 
   <ion-item>
     <ion-label class="add-pre">

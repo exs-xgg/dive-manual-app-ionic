@@ -23,27 +23,27 @@ import { Formula16Page } from '../formula16/formula16';
 })
 export class FormulaListPage {
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, color: string}>;
 
   constructor(public navCtrl: NavController) {
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Duration of SCUBA Air Supply', component: Formula1Page,},
-      { title: 'Air / Oxygen / Mixed Gas in Storage', component: Formula2Page,},
-      { title: 'Air / Oxygen / Mixed Gas Available for Use', component: Formula3Page,},
-      { title: 'EGS Pressure Calculation', component: Formula4Page,},
-      { title: 'Equivalent Air Depth Calculations', component: Formula5Page,},
-      { title: 'Surfaced Supplied Air / Mixed Gas Requirements', component: Formula6Page,},
-      { title: 'Chamber / Air O2 Requirements', component: Formula7Page,},
-      { title: '"T" Formula for Standard Cubic Feet of Gas', component: Formula8Page,},
-      { title: '"T" Formula for Equalization', component: Formula9Page,},
-      { title: '"T" Formula for Final Pressure', component: Formula10Page,},
-      { title: '"T" Formula for Partial Pressure, Maximum O2  and Cutoff Depth', component: Formula11Page,},
-      { title: 'General Gas Law Formula', component: Formula12Page,},
-      { title: 'Metabolic Makeup Formula', component: Formula13Page,},
-      { title: '', component: Formula14Page,},
-      { title: '', component: Formula15Page,},
-      { title: '', component: Formula16Page,}
+      { title: 'Duration of SCUBA Air Supply', component: Formula1Page, color: "secondary",},
+      { title: 'Air / Oxygen / Mixed Gas in Storage', component: Formula2Page, color: "secondary",},
+      { title: 'Air / Oxygen / Mixed Gas Available for Use', component: Formula3Page, color: "secondary",},
+      { title: 'EGS Pressure Calculation', component: Formula4Page, color: "",},
+      { title: 'Equivalent Air Depth Calculations', component: Formula5Page, color: "",},
+      { title: 'Surfaced Supplied Air / Mixed Gas Requirements', component: Formula6Page, color: "secondary",},
+      { title: 'Chamber / Air O2 Requirements', component: Formula7Page, color: "secondary",},
+      { title: '"T" Formula for Standard Cubic Feet of Gas', component: Formula8Page, color: "secondary",},
+      { title: '"T" Formula for Equalization', component: Formula9Page, color: "secondary",},
+      { title: '"T" Formula for Final Pressure', component: Formula10Page, color: "",},
+      { title: '"T" Formula for Partial Pressure, Maximum O2  and Cutoff Depth', component: Formula11Page, color: "",},
+      { title: 'General Gas Law Formula', component: Formula12Page, color: "",},
+      { title: 'Metabolic Makeup Formula', component: Formula13Page, color: "",},
+      { title: '', component: Formula14Page, color: "",},
+      { title: '', component: Formula15Page, color: "",},
+      { title: '', component: Formula16Page, color: "",}
     ];    
 
   }

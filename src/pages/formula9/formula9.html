@@ -10,31 +10,29 @@
 <ion-content padding class="manual-content"  overflow-scroll="true">
   <h3>"T" Formula for Equalization</h3>
 
-  Legend:
-  <ul class="my-nav">
-    <li>ATA - PSIG in flasks</li>
-    <li>FV - Floodable volume in flasks in cu ft</li>
-    <li>N - Number of flasks</li>
-  </ul>
-
   <ion-item>
-      <ion-label color="primary" stacked>ATA</ion-label>
-    <ion-input type="text" [(ngModel)]="ata" (ionChange)='computeSfc()' placeholder="PSIG in flasks"></ion-input>
+      <ion-label color="primary" stacked>Floodable Volume, in cu ft<sub>1</sub></ion-label>
+    <ion-input type="text" [(ngModel)]="fv1" (focusout)='computeSfc()' placeholder="Floodable Volume, in cu ft"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label color="primary" stacked>FV</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
+    <ion-label color="primary" stacked>Pressure<sub>1</sub></ion-label>
+    <ion-input type="text" [(ngModel)]="pressure1" (focusout)='computeSfc()' placeholder="Pressure"></ion-input>
   </ion-item>
 
   <ion-item>
-      <ion-label color="primary" stacked>N</ion-label>
-      <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
-    </ion-item>
+    <ion-label color="primary" stacked>Floodable Volume, in cu ft<sub>2</sub></ion-label>
+    <ion-input type="text" [(ngModel)]="fv2" (focusout)='computeSfc()' placeholder="Floodable Volume, in cu ft"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>Pressure<sub>2</sub></ion-label>
+    <ion-input type="text" [(ngModel)]="pressure2" (focusout)='computeSfc()' placeholder="Pressure"></ion-input>
+  </ion-item>
 
   <ion-item>
     <ion-label class="add-pre">
-        Result : <u><span id="result-sfc">0</span></u> standard cubic feet.
+        Result : <u><span id="result-sfc">0</span></u> psig.
     </ion-label>
   </ion-item>
 
