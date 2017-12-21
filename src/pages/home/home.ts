@@ -30,7 +30,7 @@ export class HomePage {
       db.executeSql('CREATE TABLE IF NOT EXISTS saved_text(rowid INTEGER PRIMARY KEY, date TEXT, description TEXT)', {})
       .then(res => console.log('Executed SQL'))
       .catch(e => console.log(e));
-      db.executeSql('CREATE TABLE IF NOT EXISTS saved_mod(rowid INTEGER PRIMARY KEY, date TEXT, fo2 TEXT, ppo2 TEXT)', {})
+      db.executeSql('CREATE TABLE IF NOT EXISTS saved_calculation(rowid INTEGER PRIMARY KEY, note TEXT, formula_id TEXT, formula_name TEXT, formula_page TEXT, date TEXT, var1 TEXT, var2 TEXT, var3 TEXT, var4 TEXT, var5 TEXT, var6 TEXT, var7 TEXT, var8 TEXT, var9 TEXT, var10 TEXT, var11 TEXT, var12 TEXT, var13 TEXT, var14 TEXT, var15 TEXT, var16 TEXT, var17 TEXT, var18 TEXT, var19 TEXT, var20 TEXT, var21 TEXT, var22 TEXT, var23 TEXT, var24 TEXT, var25 TEXT, var26 TEXT, var27 TEXT)', {})
       .then(res => console.log('Executed SQL'))
       .catch(e => console.log(e));
       db.executeSql('SELECT * FROM saved_text ORDER BY rowid DESC', {})

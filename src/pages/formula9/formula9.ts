@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, Content, NavParams } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
+import { Dialogs } from '@ionic-native/dialogs';
 
 @Component({
   selector: 'page-formula9',
@@ -18,16 +19,34 @@ export class Formula9Page {
   @ViewChild(Content) content: Content;
   constructor(public navCtrl: NavController, private sqlite: SQLite, 
       private toast: Toast,
-      public navParams: NavParams) {
+      public navParams: NavParams,
+      private dialogs: Dialogs) {
 
-    this.fv1 = navParams.get("fv1");
-    this.fv2 = navParams.get("fv2");
-    this.pressure1 = navParams.get("pressure1");
-    this.pressure2 = navParams.get("pressure2");
+    // this.fv1 = navParams.get("fv1");
+    // this.fv2 = navParams.get("fv2");
+    // this.pressure1 = navParams.get("pressure1");
+    // this.pressure2 = navParams.get("pressure2");
+
+    if( navParams.get("var1") != null ){
+      this.fv1 = navParams.get("var1");
+    }
+  
+    if( navParams.get("var2") != null ){
+      this.fv2 = navParams.get("var2");
+    }
+  
+    if( navParams.get("var3") != null ){
+      this.pressure1 = navParams.get("var3");
+    }
+
+    if( navParams.get("var4") != null ){
+      this.pressure2 = navParams.get("var4");
+    }
 
   }
 
   ionViewDidEnter() {
+    this.computeSfc();
   }
 
 
@@ -48,18 +67,27 @@ export class Formula9Page {
 
   }
 
-  saveCalculation() {
+  save(){
+    this.dialogs.prompt("Add Note", "", ["Save", "Cancel"], "")
+    .then((result) => 
+    { 
+      if(result.buttonIndex == 1) {
+        this.saveCalculation(result.input1);
+      }
+    })
+    .catch(e => alert("Error in saving calculation"));
+  }
+
+  saveCalculation(note) {
     this.sqlite.create({
       name: 'ionicdb.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql("INSERT INTO saved_mod VALUES(NULL,strftime('%Y-%m-%d %H-%M-%S','now'),?, ?)",[this.ata, this.fv])
+      db.executeSql("INSERT INTO saved_calculation (date, note, formula_id, formula_name, formula_page, var1, var2, var3, var4) VALUES(strftime('%Y-%m-%d %H-%M-%S','now'),?,?,?,?,?,?,?,?)",[note, '9', '"T" Formula for Equalization', 'Formula9Page', this.fv1, this.fv2, this.pressure1, this.pressure2])
         .then(res => {
           console.log(res);
           this.toast.show('Data saved', '1000', 'center').subscribe(
-            toast => {
-              this.navCtrl.popToRoot();
-            }
+            toast => {}
           );
         })
         .catch(e => {

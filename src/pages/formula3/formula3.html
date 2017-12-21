@@ -20,27 +20,27 @@
 
   <ion-item>
       <ion-label color="primary" stacked>P<sub>f</sub></ion-label>
-    <ion-input type="text" [(ngModel)]="pf" (ionChange)='computeSfc()' placeholder="Flask pressure"></ion-input>
+    <ion-input type="number" [(ngModel)]="pf" (ionChange)='computeSfc()' placeholder="Flask pressure"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>P<sub>mf</sub></ion-label>
-    <ion-input type="text" [(ngModel)]="mf" (ionChange)='computeSfc()' placeholder="Minimum flask pressure"></ion-input>
+    <ion-input type="number" [(ngModel)]="mf" (ionChange)='computeSfc()' placeholder="Minimum flask pressure"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>MMP</ion-label>
-    <ion-input type="text" [(ngModel)]="mmp" (ionChange)='computeSfc()' placeholder="MMP"></ion-input>
+    <ion-input type="number" [(ngModel)]="mmp" (ionChange)='computeSfc()' placeholder="MMP"></ion-input>
   </ion-item>
 
   <ion-item>
       <ion-label color="primary" stacked>FV</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks"></ion-input>
+    <ion-input type="number" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks"></ion-input>
   </ion-item>
   
   <ion-item>
       <ion-label color="primary" stacked>N</ion-label>
-    <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
+    <ion-input type="number" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -58,7 +58,7 @@
       <strong>Note:</strong> If calculating O2 available for use for chamber operations, DO NOT USE MMP. Use Pmf
       + O2 regulator setting.
   </p>
-  <ion-item hidden>
-    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  <ion-item>
+    <button ion-button (click)="save()" class="save-computation" block>Save Computation</button>
   </ion-item>
 </ion-content>

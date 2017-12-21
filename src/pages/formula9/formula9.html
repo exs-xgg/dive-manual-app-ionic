@@ -12,23 +12,29 @@
 
   <ion-item>
       <ion-label color="primary" stacked>Floodable Volume, in cu ft<sub>1</sub></ion-label>
-    <ion-input type="text" [(ngModel)]="fv1" (focusout)='computeSfc()' placeholder="Floodable Volume, in cu ft"></ion-input>
+    <ion-input type="number" [(ngModel)]="fv1" placeholder="Floodable Volume, in cu ft"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>Pressure<sub>1</sub></ion-label>
-    <ion-input type="text" [(ngModel)]="pressure1" (focusout)='computeSfc()' placeholder="Pressure"></ion-input>
+    <ion-input type="number" [(ngModel)]="pressure1" placeholder="Pressure"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>Floodable Volume, in cu ft<sub>2</sub></ion-label>
-    <ion-input type="text" [(ngModel)]="fv2" (focusout)='computeSfc()' placeholder="Floodable Volume, in cu ft"></ion-input>
+    <ion-input type="number" [(ngModel)]="fv2" placeholder="Floodable Volume, in cu ft"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>Pressure<sub>2</sub></ion-label>
-    <ion-input type="text" [(ngModel)]="pressure2" (focusout)='computeSfc()' placeholder="Pressure"></ion-input>
+    <ion-input type="number" [(ngModel)]="pressure2" placeholder="Pressure"></ion-input>
   </ion-item>
+
+  <ion-buttons class="bar-buttons bar-buttons-md item-md pad-top-20">
+    <button (click)="computeSfc()" color="secondary" class="disable-hover bar-button bar-button-ios bar-button-solid bar-button-solid-ios bar-button-solid-ios-secondary">
+      <span class="button-inner">Compute</span>
+    </button>
+  </ion-buttons>
 
   <ion-item>
     <ion-label class="add-pre">
@@ -36,7 +42,7 @@
     </ion-label>
   </ion-item>
 
-  <ion-item hidden>
-    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  <ion-item>
+    <button ion-button (click)="save()" class="save-computation" block>Save Computation</button>
   </ion-item>
 </ion-content>

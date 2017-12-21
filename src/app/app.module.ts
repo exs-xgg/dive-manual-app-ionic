@@ -32,6 +32,9 @@ import { Formula13Page } from '../pages/formula13/formula13';
 import { Formula14Page } from '../pages/formula14/formula14';
 import { Formula15Page } from '../pages/formula15/formula15';
 import { Formula16Page } from '../pages/formula16/formula16';
+import { DocumentViewer } from '@ionic-native/document-viewer';
+
+import { Dialogs } from '@ionic-native/dialogs';
 
 @NgModule({
   declarations: [
@@ -97,7 +100,9 @@ import { Formula16Page } from '../pages/formula16/formula16';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SQLite,
-    Toast
+    Toast,
+    DocumentViewer,
+    Dialogs
   ]
 })
 export class AppModule {}

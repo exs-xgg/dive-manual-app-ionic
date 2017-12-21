@@ -9,6 +9,7 @@ import { PdfPage } from '../pages/pdf/pdf';
 import { SavedCalculationsPage } from '../pages/savedCalculations/savedCalculations';
 import { LibraryPage } from '../pages/library/library';
 import { FormulaListPage } from '../pages/formulaList/formulaList';
+import { Formula16Page } from '../pages/formula16/formula16';
 
 
 @Component({
@@ -35,7 +36,8 @@ export class MyApp {
       { title: 'Library', component: LibraryPage,},
       { title: 'Calculator', component: FormulaListPage,},
       { title: 'Saved Items', component: SavedItemsPage},
-      { title: 'Saved Calculations', component: SavedCalculationsPage}
+      { title: 'Saved Calculations', component: SavedCalculationsPage},
+      { title: 'Test Manual', component: Formula16Page}
     ];    
 
   }

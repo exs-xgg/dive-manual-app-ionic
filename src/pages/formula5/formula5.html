@@ -10,30 +10,29 @@
 <ion-content padding class="manual-content"  overflow-scroll="true">
   <h3>Equivalent Air Depth Calculations</h3>
 
-  Legend:
-  <ul class="my-nav">
-    <li>EAD - equivalent depth on air (fsw)</li>
-    <li>D - diving depth mixture (fsw)</li>
-    <li>O2 % - oxygen concentration in breathing medium (percentage decimal)</li>
-  </ul>
-
   <ion-item>
-      <ion-label color="primary" stacked>ATA</ion-label>
-    <ion-input type="text" [(ngModel)]="ata" (ionChange)='computeSfc()' placeholder="PSIG in flasks"></ion-input>
+      <ion-label color="primary" stacked>Depth</ion-label>
+    <ion-input type="number" [(ngModel)]="depth" placeholder="Depth"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label color="primary" stacked>FV</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
+    <ion-label color="primary" stacked>Fraction of Oxygen</ion-label>
+    <ion-input type="number" [(ngModel)]="fo" placeholder="Fraction of Oxygen"></ion-input>
   </ion-item>
+
+  <ion-buttons class="bar-buttons bar-buttons-md item-md pad-top-20">
+    <button (click)="compute()" color="secondary" class="disable-hover bar-button bar-button-ios bar-button-solid bar-button-solid-ios bar-button-solid-ios-secondary">
+      <span class="button-inner">Compute</span>
+    </button>
+  </ion-buttons>
 
   <ion-item>
     <ion-label class="add-pre">
-        Result : <u><span id="result-sfc">0</span></u> standard cubic feet.
+        Result : <u><span id="result-sfc">0</span></u> feet.
     </ion-label>
   </ion-item>
 
-  <ion-item hidden>
-    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  <ion-item>
+    <button ion-button (click)="save()" class="save-computation" block>Save Computation</button>
   </ion-item>
 </ion-content>

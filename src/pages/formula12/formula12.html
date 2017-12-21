@@ -12,33 +12,51 @@
 
   Legend:
   <ul class="my-nav">
-    <li>ATA - PSIG in flasks</li>
-    <li>FV - Floodable volume in flasks in cu ft</li>
-    <li>N - Number of flasks</li>
+    <li>P<sub>1</sub> – Initial Pressure (absolute)</li>
+    <li>V<sub>1</sub> – Initial Volume</li>
+    <li>T<sub>1</sub> – Initial Temperature (absolute)</li>
+    <li>P<sub>2</sub> – Final Pressure (absolute)</li>
+    <li>V<sub>2</sub> – Final Volume</li>
+    <li>T<sub>2</sub> – Final Temperature (absolute)</li>
   </ul>
 
+  <ion-label><strong>Note:</strong> To compute for P1, V1, T1, P2, V2 or T2, make sure that you fill out 5 fields, leave the one your are computing to blank and click the 'Compute' botton. </ion-label>
   <ion-item>
-      <ion-label color="primary" stacked>ATA</ion-label>
-    <ion-input type="text" [(ngModel)]="ata" (ionChange)='computeSfc()' placeholder="PSIG in flasks"></ion-input>
+      <ion-label color="primary" stacked>P<sub>1</sub></ion-label>
+    <ion-input type="number" [(ngModel)]="p1" placeholder="Initial Pressure (absolute)"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label color="primary" stacked>FV</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
+    <ion-label color="primary" stacked>V<sub>1</sub></ion-label>
+    <ion-input type="number" [(ngModel)]="v1" placeholder="Initial Volume"></ion-input>
   </ion-item>
 
   <ion-item>
-      <ion-label color="primary" stacked>N</ion-label>
-      <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
-    </ion-item>
-
-  <ion-item>
-    <ion-label class="add-pre">
-        Result : <u><span id="result-sfc">0</span></u> standard cubic feet.
-    </ion-label>
+      <ion-label color="primary" stacked>T<sub>1</sub></ion-label>
+    <ion-input type="number" [(ngModel)]="t1" placeholder="Initial Temperature (absolute)"></ion-input>
   </ion-item>
 
-  <ion-item hidden>
-    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  <ion-item>
+    <ion-label color="primary" stacked>P<sub>2</sub></ion-label>
+    <ion-input type="number" [(ngModel)]="p2" placeholder="Final Pressure (absolute)"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label color="primary" stacked>V<sub>2</sub></ion-label>
+    <ion-input type="number" [(ngModel)]="v2" placeholder="Final Volume"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" stacked>T<sub>2</sub></ion-label>
+    <ion-input type="number" [(ngModel)]="t2" placeholder="Final Temperature (absolute)"></ion-input>
+  </ion-item>
+
+  <ion-buttons class="bar-buttons bar-buttons-md item-md pad-top-20">
+    <button (click)="compute()" color="secondary" class="disable-hover bar-button bar-button-ios bar-button-solid bar-button-solid-ios bar-button-solid-ios-secondary">
+      <span class="button-inner">Compute</span>
+    </button>
+  </ion-buttons>
+
+  <ion-item>
+    <button ion-button (click)="save()" class="save-computation" block>Save Computation</button>
   </ion-item>
 </ion-content>

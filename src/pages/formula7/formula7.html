@@ -18,12 +18,12 @@
 
   <ion-item>
       <ion-label color="primary" stacked>Depth</ion-label>
-    <ion-input type="text" [(ngModel)]="depth" (ionChange)='computeSfc()' placeholder="Depth"></ion-input>
+    <ion-input type="number" [(ngModel)]="depth" (ionChange)='computeSfc()' placeholder="Depth"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>Floodable volume of chamber locks</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume of chamber locks"></ion-input>
+    <ion-input type="number" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume of chamber locks"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -33,10 +33,6 @@
   </ion-item>
 
   <div><label><u>Ventilation requirements</u></label></div>
-  Legend:
-  <ul class="my-nav">
-    <li>ATA - ??</li>
-  </ul>
 
   <ion-item>
       <ion-label color="primary" stacked>ATA</ion-label>
@@ -203,7 +199,7 @@
     </ion-label>
   </ion-item>
 
-  <ion-item hidden>
-    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  <ion-item>
+    <button ion-button (click)="save()" class="save-computation" block>Save Computation</button>
   </ion-item>
 </ion-content>

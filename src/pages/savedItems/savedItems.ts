@@ -60,7 +60,13 @@ export class SavedItemsPage {
       .then(res => {
         this.savedTexts = [];
         for(var i=0; i<res.rows.length; i++) {
-          this.savedTexts.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,description:res.rows.item(i).description})
+          this.savedTexts.push(
+            {
+              rowid:res.rows.item(i).rowid,
+              date:res.rows.item(i).date,
+              description:res.rows.item(i).description
+            }
+          )
         }
       })
       .catch(e => console.log(e));

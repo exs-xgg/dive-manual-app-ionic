@@ -19,17 +19,17 @@
 
   <ion-item>
       <ion-label color="primary" stacked>ATA</ion-label>
-    <ion-input type="text" [(ngModel)]="ata" (ionChange)='computeSfc()' placeholder="PSIG in flasks"></ion-input>
+    <ion-input type="number" [(ngModel)]="ata" (ionChange)='computeSfc()' placeholder="PSIG in flasks"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" stacked>FV</ion-label>
-    <ion-input type="text" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
+    <ion-input type="number" [(ngModel)]="fv" (ionChange)='computeSfc()' placeholder="Floodable volume in flasks in cu ft"></ion-input>
   </ion-item>
 
   <ion-item>
       <ion-label color="primary" stacked>N</ion-label>
-      <ion-input type="text" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
+      <ion-input type="number" [(ngModel)]="n" (ionChange)='computeSfc()' placeholder="Number of flasks"></ion-input>
     </ion-item>
 
   <ion-item>
@@ -38,7 +38,7 @@
     </ion-label>
   </ion-item>
 
-  <ion-item hidden>
-    <button ion-button (click)="saveCalculation()" class="save-computation" block>Save Computation</button>
+  <ion-item>
+    <button ion-button (click)="save()" class="save-computation" block>Save Computation</button>
   </ion-item>
 </ion-content>

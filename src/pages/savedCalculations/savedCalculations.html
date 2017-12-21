@@ -12,9 +12,9 @@
     <ion-list>
       <ion-item-sliding *ngFor="let savedCalculation of savedCalculations; let i=index">
         <ion-item nopadding>
-          <p (click)="goToCalculator(savedCalculation.fo2, savedCalculation.ppo2)">
-            <span><strong>FO<sub>2</sub>: {{savedCalculation.fo2}} - PPO<sub>2</sub>: {{savedCalculation.ppo2}}</strong></span><br>
-            {{savedCalculation.date}}
+          <p (click)="goToCalculator(savedCalculation)">
+            <span><strong>{{savedCalculation.note}}</strong></span><br>
+            {{savedCalculation.date}} - {{savedCalculation.name}}
           </p>
         </ion-item>
         <ion-item-options side="right">
