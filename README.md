@@ -1,4 +1,7 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+A mobile app project that got discontinued, and submitted to Existence Innovation's repository for students to browse and learn.
+
+
+This was developed from a starter template for [Ionic](http://ionicframework.com/docs/) projects.
 
 ## How to use this template
 
